@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -77,9 +79,21 @@ public class EnrollmentController {
 
     /////////////////////////////////////////////////////////////
 
+    /*
+    Muestra la lista de cursos y sus alumnos que lo integran
+     */
     @GetMapping("/students/by/course")
     public ResponseEntity<Map<String, String>> getStudentsByCourse() throws Exception{
         Map<String, String> map = service.getStudentsByCourse();
+        return new ResponseEntity<>(map, HttpStatus.OK);
+    }
+
+    /*
+    Muestra la lista de cursos y la cantidad de alumnos matriculados de forma descendente
+     */
+    @GetMapping("/quantity/students/by/course")
+    public ResponseEntity<Map<String, Integer>> getQuantityStudentsByCourse() throws Exception{
+        Map<String, Integer> map = service.getQuantityStudentsByCourse();
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 }
