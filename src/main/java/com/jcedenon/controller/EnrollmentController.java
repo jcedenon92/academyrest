@@ -1,6 +1,8 @@
 package com.jcedenon.controller;
 
 import com.jcedenon.dto.EnrollmentDTO;
+import com.jcedenon.dto.ProcedureDTO;
+import com.jcedenon.dto.StudentsByCourseDTO;
 import com.jcedenon.exceptions.ModelNotFoundException;
 import com.jcedenon.model.Course;
 import com.jcedenon.model.Enrollment;
@@ -95,5 +97,23 @@ public class EnrollmentController {
     public ResponseEntity<Map<String, Integer>> getQuantityStudentsByCourse() throws Exception{
         Map<String, Integer> map = service.getQuantityStudentsByCourse();
         return new ResponseEntity<>(map, HttpStatus.OK);
+    }
+
+    /*
+    Muestra la lista de Estudiantes y su fecha de matricula
+     */
+    @GetMapping("/procedure/enrollmentbystudent")
+    public ResponseEntity<List<ProcedureDTO>> callProcedure() throws Exception{
+        List<ProcedureDTO> list = service.callProcedure();
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    /*
+    Muestra la lista de cursos y la cantidad de alumnos matriculados de forma descendente
+     */
+    @GetMapping("/procedure/enrollmentbycourse")
+    public ResponseEntity<List<StudentsByCourseDTO>> callProcedure2() throws Exception{
+        List<StudentsByCourseDTO> list = service.callProcedure2();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 }
