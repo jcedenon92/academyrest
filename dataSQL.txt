@@ -1,0 +1,40 @@
+-- Data table Course --
+INSERT INTO public.course (id_course, acronym, name, status) VALUES (3, 'DEV', 'Programacion', true);
+INSERT INTO public.course (id_course, acronym, name, status) VALUES (4, 'DBA', 'Base de Datos', true);
+INSERT INTO public.course (id_course, acronym, name, status) VALUES (5, 'RED', 'Arquitectura de Redes', true);
+INSERT INTO public.course (id_course, acronym, name, status) VALUES (6, 'CLO', 'Cloud Computing', true);
+INSERT INTO public.course (id_course, acronym, name, status) VALUES (7, 'IAP', 'Inteligencia Artificial con Python', true);
+-- Data table Course --
+
+-- Data table Student--
+INSERT INTO public.student (id_student, age, dni, names, surname) VALUES (1, 18, '12345678', 'Alejandro', 'Toledo');
+INSERT INTO public.student (id_student, age, dni, names, surname) VALUES (2, 19, '87654321', 'Keiko', 'Fujimori');
+INSERT INTO public.student (id_student, age, dni, names, surname) VALUES (3, 22, '12345679', 'Pedro', 'Castillo');
+INSERT INTO public.student (id_student, age, dni, names, surname) VALUES (4, 20, '15935725', 'Martin', 'Vizcarra');
+INSERT INTO public.student (id_student, age, dni, names, surname) VALUES (5, 21, '74185236', 'Alan', 'Garcia');
+-- Data table Student--
+
+
+-- Data table Enrollment--
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (1, '2022-05-28 00:00:00', true, 1);
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (9, '2022-05-29 18:31:50', true, 2);
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (7, '2022-05-29 18:31:50', true, 3);
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (8, '2022-05-29 18:31:50', true, 4);
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (13, '2022-06-05 17:29:50', true, 3);
+INSERT INTO public.enrollment (id_enrollment, date_enrollment, state, id_student) VALUES (14, '2022-06-05 17:29:50', true, 5);
+-- Data table Enrollment--
+
+
+-- Data table EnrollmentDetail--
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (1, '201', 3, 1);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (2, '202', 4, 1);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (3, '203', 5, 1);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (6, '300', 5, 7);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (7, '300', 5, 8);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (8, '400', 4, 9);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (12, '306', 6, 13);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (13, '406', 7, 13);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (14, '306', 3, 14);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (15, '306', 6, 14);
+INSERT INTO public.enrollment_detail (id_enrollment_detail, classroom, id_course, id_enrollment) VALUES (16, '406', 7, 14);
+-- Data table EnrollmentDetail--
